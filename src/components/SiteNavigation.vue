@@ -10,13 +10,13 @@ const toggleMenu = () => {
     setTimeout(() => {
       sidebar.value.classList.remove("-translate-x-full");
       sidebar.value.classList.add("translate-x-0");
-    }, 400);
+    }, 300);
   } else {
     sidebar.value.classList.remove("translate-x-0");
     sidebar.value.classList.add("-translate-x-full");
     setTimeout(() => {
       modal.value.classList.add("hidden");
-    }, 400);
+    }, 300);
   }
 };
 </script>
@@ -25,7 +25,7 @@ const toggleMenu = () => {
   <nav>
     <div class="container">
       <!-- head -->
-      <div class="h-[4.2rem] pb-2 flex justify-between items-center md:h-28 lg:justify-normal lg:gap-8">
+      <div class="h-[4.2rem] pb-2 flex justify-between items-center md:h-28 lg:justify-normal lg:gap-8 lg:border-b">
         <div class="flex gap-4">
           <button
             type="button"

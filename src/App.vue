@@ -30,13 +30,13 @@ onMounted(async () => {
   <div id="app">
     <!-- nav -->
     <SiteNavigation />
-    <main>
+    <main class="lg:flex lg:gap-14 lg:mb-20">
       <!-- hero section -->
-      <div>
+      <div class="lg:pt-20 lg:flex-1 bg-blue-300">
         <ProductViewer v-if="data && data.images" :images="data.images" />
       </div>
       <!-- product info -->
-      <div>
+      <div class="lg:pt-20 lg:flex-1 bg-blue-100">
         <section class="px-[1.5rem] mb-16 max-w-xl mx-auto md:max-w-2xl">
           <p
             class="pt-6 uppercase text-sm font-bold text-dark-grayish-blue tracking-wider">
@@ -82,6 +82,5 @@ onMounted(async () => {
   </div>
 </template>
 
-<style>
-/* Puedes agregar tus estilos aquí */
+<style scoped>
 </style>
