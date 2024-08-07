@@ -120,7 +120,7 @@ onMounted(async () => {
       <div class="lg:pt-20 lg:flex-1">
         <ProductViewer v-if="data && data.images" :images="data.images" />
       </div>
-      <!-- product info -->
+      
       <div class="lg:pt-20 lg:flex-1">
         <section
           v-if="data"
