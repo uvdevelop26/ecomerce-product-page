@@ -37,6 +37,29 @@ const previous = () => {
   }
 };
 
+const modalNext = () => {
+  const currentIndex = props.images.jpg.indexOf(selectedImage.value);
+
+  if (currentIndex < props.images.jpg.length - 1) {
+    selectedImage.value = props.images.jpg[currentIndex + 1];
+  } else {
+    console.log('finish');
+  }
+
+}
+
+
+const modalPrevious = () => {
+  const currentIndex = props.images.jpg.indexOf(selectedImage.value);
+
+  if (currentIndex > 0) {
+    selectedImage.value = props.images.jpg[currentIndex - 1];
+  } else {
+    console.log('init');
+  }
+
+}
+
 const selectImage = (index) => {
   selectedImage.value = props.images.jpg[index];
 };
@@ -105,7 +128,7 @@ const styleThumbnail = (index) => {
   <!-- modal -->
   <Modal :open="openModal" @close="openModal = false">
     <template #default>
-      <div class="">
+      <div class="relative">
         <div class="h-[34.4rem] rounded-md overflow-hidden">
           <img
             :src="selectedImage"
@@ -130,6 +153,20 @@ const styleThumbnail = (index) => {
             </button>
           </li>
         </ul>
+        <button
+          type="button"
+          aria-label="previous"
+          class="absolute top-1/2 -left-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100"
+          @click="modalPrevious">
+          <img src="/images/icon-previous.svg" alt="previous" class="w-2" />
+        </button>
+        <button
+          type="button"
+          aria-label="next"
+          class="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100"
+          @click="modalNext">
+          <img src="/images/icon-next.svg" alt="next" class="w-2" />
+        </button>
       </div>
     </template>
   </Modal>
