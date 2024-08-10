@@ -13,7 +13,7 @@ const flashDuration = ref(3000);
 
 const getData = async () => {
   try {
-    const response = await fetch("src/data/data.json");
+    const response = await fetch("/data/data.json");
 
     if (!response.ok) {
       throw new Error("data not available...");
